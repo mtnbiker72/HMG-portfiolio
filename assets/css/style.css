@@ -1,7 +1,7 @@
 /* Default background theme  */
 body {
   margin-right: 20px;
-   background-image: url(../../week2/homework/assets/images/waves.jpeg); 
+  background-image: url(../images/waves.jpeg);  
   background-size: contain;
 }
 
@@ -10,6 +10,7 @@ body {
   grid-area: heading1;
   font-size: 35px;
   text-shadow: 2px 2px rgb(126, 3, 56);
+  align-self: center;
 }
 .navbar {
   grid-area: navbar;
@@ -29,7 +30,8 @@ body {
   position: relative;
   font-size: 40px;
   padding-right: 20px;
-  border-right: 5px solid blue;
+  border-right: 5px solid midnightblue;
+  display: grid;
 }
 .text {
   grid-area: text;
@@ -75,10 +77,12 @@ body {
   position: relative;
   font-size: 40px;
   padding-right: 20px;
-  border-right: 5px solid blue;
+  border-right: 5px solid midnightblue;
+  display: grid;
 }
 .info {
   grid-area: info;
+  align-self: center;
 }
 .footer {
   grid-area: footer;
@@ -162,6 +166,7 @@ section ul li {
     left: 50px;
     bottom: 0px;
     padding: 5px;
+    z-index: 9999;
 }
 
 /* Defines the welcome banner text  */
@@ -173,9 +178,11 @@ section ul li {
 }
 /* When the user hovers over a picture, do this */
 .make-larger:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
   border: 5px solid white;
+  position: absolute;
   border-radius: 10px;
+  z-index: 9998;
 }
 
 /* This is how the screen will be layed out for a mobile device by default  */
@@ -183,7 +190,6 @@ section ul li {
 .grid-item {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
   grid-template-areas: 
       "heading1"
       "navbar"
@@ -204,6 +210,10 @@ section ul li {
   .title-align {
       align-self: center;
       justify-self: center;
+  }
+  h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
 /* This is how the screen will be layed out for a tablet size   */
@@ -237,7 +247,8 @@ section ul li {
   .grid-item {
       display: grid;
       grid-template-columns: 400px repeat(2, 1fr);
-      grid-template-rows: 120px 300px auto repeat(4, 1fr) auto auto;
+      grid-template-rows: auto 300px auto repeat(4, 1fr) auto auto;
+      gap: 5px;
       grid-template-areas: 
           "heading1 navbar navbar"
           "selfpic banner banner"
